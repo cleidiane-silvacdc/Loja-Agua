@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Produtos - Loja de Água Potável</title>
+  <link rel="stylesheet" href="produtos.css">
+</head>
+
+<body>
+  <header>
+  
+  </header>
+
+  <main>
+    <div>      <!---> Botão para sair -->
+      <a href="index.html" class="sair">Sair</a>
+    </div><br>
+    <form id="form-produto" action="#" method="post" enctype="multipart/form-data">
+      <label for="nome-produto">Nome do produto:</label><br>
+      <input type="text" id="nome-produto" name="nome-produto" required><br><br>
+
+      <label for="tipo">Tipo:</label><br>
+      <select id="tipo" name="tipo" required>
+        <option value="">Selecione</option>
+        <option value="Garrafão">Garrafão</option>
+        <option value="Garrafa">Garrafa</option>
+      </select><br><br>
+
+      <label for="preco">Preço (R$):</label><br>
+      <input type="number" id="preco" name="preco" step="0.01" required><br><br>
+
+      <label for="quantidade">Quantidade:</label><br>
+      <input type="number" id="quantidade" name="quantidade" required><br><br>
+
+      <label for="descricao">Descrição:</label><br>
+      <textarea id="descricao" name="descricao" rows="3" placeholder="Descrição do produto"></textarea><br><br>
+
+      <label for="imagem">Imagem do produto:</label><br>
+      <input type="file" id="imagem" name="imagem" accept="image/*"><br><br>
+
+      <!-- Pré-visualização da imagem -->
+      <img id="preview" src="" alt="Pré-visualização" style="display:none; max-width:100%; margin-bottom:10px; border-radius:5px;">
+
+      <input type="submit" value="Cadastrar">
+      <input type="reset" value="Redefinir">
+    </form>
+  </main>
+
+  <script>
+    // Pré-visualização da imagem
+    const inputImagem = document.getElementById('imagem');
+    const preview = document.getElementById('preview');
+
+    inputImagem.addEventListener('change', function() {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.addEventListener('load', function() {
+          preview.setAttribute('src', this.result);
+          preview.style.display = 'block';
+        });
+        reader.readAsDataURL(file);
+      } else {
+        preview.setAttribute('src', '');
+        preview.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>

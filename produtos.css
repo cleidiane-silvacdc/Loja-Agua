@@ -1,0 +1,85 @@
+/* Fundo da página */
+body {
+  background-image: url('img/fundo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* 👈 empurra tudo para baixo */
+  align-items: flex-end;     /* 👈 empurra tudo para a direita */
+  padding: 50px;             /* 👈 distância das bordas */
+}
+
+/* Botão de sair */
+a.sair {
+  display: inline-block;
+  text-align:center;
+  background-color: #0077cc;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  margin-top: 20px;   /* espaço do formulário */
+  margin-left: auto;   /* empurra para direita */
+  display: block;
+  width: fit-content;  /* tamanho ajustado ao texto */
+}
+
+
+a.sair:hover {
+  background-color: #005fa3;
+}
+
+
+/* Caixa do formulário */
+form {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Campos e botões */
+input, select, textarea {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="submit"], input[type="button"], input[type="reset"] {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover {
+  background-color: #005fa3;
+}
+
+/* Responsividade */
+@media screen and (max-width: 500px) {
+  body {
+    padding: 10px;
+  }
+
+  form {
+    width: 100%;
+    padding: 15px;
+  }
+}
