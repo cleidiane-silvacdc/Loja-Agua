@@ -24,7 +24,7 @@
       <input type="text" id="usuario" name="usuario" required><br><br>
 
       <label for="senha">Senha:</label><br>
-      <input type="password" id="senha" name="senha" required><br><br>
+      <input type="password" id="senha" name="senha" required oninput="this.value = this.value.replace(/[^0-9]/g, '')"><br><br>
 
       <input type="submit" value="Entrar">
 
@@ -36,6 +36,7 @@
 
 
   </main>
+  <script src="script.js"></script>
 </body>
 
 </html>
